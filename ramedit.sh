@@ -23,7 +23,6 @@ ramsync()
 if ! [ -d "/Volumes/RamDisk" ]; then
 	echo "********************************** Creating ramdisk **********************************"
 	diskutil erasevolume HFS+ "RamDisk" `/usr/bin/hdiutil attach -nobrowse -nomount ram://2097152`
-	exit 1
 fi
 
 # Copy the project, locks original files
