@@ -16,17 +16,15 @@ Useful to keep modules outside the Monkey2/Modules folder. Copies the entire mod
 Counts the number of code lines in any folder and its subfolders, searching for a name pattern and a path pattern to exclude from the count. Can be used to count lines in any programming language source files.
 
 # ramedit
-Creates a 1GB RAMdrive, copies a project folder to it and lauches your current Monkey2 editor (assuming there's a file named just like the folder inside it, like "myProject/myProject.monkey2". Syncs any changes back to the original every 5 minutes, or when you're done and hit "ctrl+c" to kill the script.
+Creates a 1GB RAMdrive, copies a project folder to it and launches your current Monkey2 editor (assuming there's a file named just like the folder inside it, like "myProject/myProject.monkey2". Syncs any changes back to the original every 5 minutes, or when you're done and hit "ctrl+c" to kill the script.
 
 To prevent accidental changes in the original while the ram copies are being edited, original files are locked and are only unlocked when the script finishes. Benefits:
 
-	- Lowers the load on SSD drives and Cloud drives (like Dropbox or Google Drive) that monitor the project folder
+	- Lowers the load on SSD drives and cloud drives (like Dropbox or Google Drive) that monitor the project folder
 	
 	- Faster compiling? Dunno, maybe a bit.
 	
 	- Keeps original source files clean, since it avoids synchronizing ".build" and ".products" folders.
 	
-	- Kinda dangerous! If your computer crashes before changes are sychronized, they're lost forever, like, "poof"!
-	
-
+	- Kinda dangerous! If your computer crashes before changes are synchronized, they're lost forever, like, "poof"!
 
