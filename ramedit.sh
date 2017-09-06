@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# OSX: Copy this script (or create a symlink) in /usr/local/bin so you can run it from anywhere. 
+# OSX: Copy this script (or create a symlink) in /usr/local/bin so you can run it from anywhere.
 RAMPATH="/Volumes/RamDisk"
 
 # Basic input checks
@@ -27,7 +27,7 @@ if ! [ -d "/Volumes/RamDisk" ]; then
 fi
 
 # Copy the project, locks original files
-echo "********************************** Copying folder $1 **********************************"
+echo "********************** Copying folder $1 and locking original files **********************"
 ramsync $1 $RAMPATH/$1
 chflags -R uchg $1
 
@@ -41,19 +41,16 @@ control_c()
 	#when this subroutine is called by "trap", $2 is the original folder.
 	chflags -R nouchg $2
 	ramsync $1 $2
-	echo "********************************** Done! **********************************"
+	echo "****************************** Done! Original files unlocked **************************"
 	exit $?
 }
 trap 'control_c $RAMPATH/$1 $1' SIGINT
 
-# Copies changes every minute until ctrl+c
+# Copies changes every 5 minutes until ctrl+c
 while true
-do 
+do
 	chflags -R nouchg $1
 	ramsync $RAMPATH/$1 $1
 	chflags -R uchg $1
-	sleep 60
+	sleep 300
 done
-
-
-
