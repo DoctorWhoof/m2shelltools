@@ -4,18 +4,9 @@
 # Make sure your Monkey 2 folder is set correctly here. Don't add "/" at the end!
 M2PATH="/Applications/Blitz/Monkey2"
 
-# Run Monkey's Makemods
-echo "Updating Monkey 2..."
-echo ""
+# Run Monkey's Makedocs
 cd $M2PATH/scripts
-./rebuildmx2cc.sh
-./rebuildmods.sh
-./makedocs.sh
-echo ""
-echo "************************* Done! *************************"
+bash ./makedocs.sh
 echo ""
 # Play beep
 printf \\a
-say m2 rebuild done
-
-# tedupdate

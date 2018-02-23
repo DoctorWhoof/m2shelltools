@@ -2,20 +2,16 @@
 
 # OSX: Copy this script (or create a symlink) in /usr/local/bin so you can run it from anywhere.
 # Make sure your Monkey 2 folder is set correctly here. Don't add "/" at the end!
-M2PATH="/Applications/Blitz/Monkey2"
+TEDPATH="/Applications/Blitz/Ted2Go"
 
-# Run Monkey's Makemods
-echo "Updating Monkey 2..."
+echo "Updating Ted2Go..."
 echo ""
-cd $M2PATH/scripts
-./rebuildmx2cc.sh
-./rebuildmods.sh
-./makedocs.sh
+cd $TEDPATH
+makeapp Ted2.monkey2
+
 echo ""
 echo "************************* Done! *************************"
 echo ""
 # Play beep
 printf \\a
-say m2 rebuild done
-
-# tedupdate
+say ted2 rebuild done
